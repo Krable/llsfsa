@@ -280,7 +280,7 @@ function createMoviePoster(movie) {
 // Fonction pour créer des affiches de film pour chaque film de l'API
 function createMoviePosters(movies) {
   // Sélectionner l'élément HTML où les affiches seront affichées
-  const posterContainer = document.getElementById("poster-container");
+  const posterContainer = document.getElementById("ulul");
 
   // Créer une affiche de film pour chaque film de l'API et l'ajouter au conteneur
   movies.forEach((movie) => {
