@@ -27,19 +27,23 @@ function createMoviePoster(movie) {
 
   // Ajouter la liste des plateformes de distribution
   const distribution = document.createElement("ul");
+  distribution.classList.add("platforms")
   if (movie.netflix) {
     const netflix = document.createElement("li");
     netflix.textContent = "Disponible sur Netflix";
+    netflix.classList.add("netflix");
     distribution.appendChild(netflix);
   }
   if (movie.amazon) {
     const amazon = document.createElement("li");
     amazon.textContent = "Disponible sur Amazon";
+    amazon.classList.add("amazon");
     distribution.appendChild(amazon);
   }
   if (movie.download) {
     const download = document.createElement("li");
     download.textContent = "Disponible en téléchargement";
+    download.classList.add("download");
     distribution.appendChild(download);
   }
   poster.appendChild(distribution);
