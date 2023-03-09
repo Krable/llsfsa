@@ -12,7 +12,7 @@ const pool = new pg.Pool({
   password: "password",
   port: 5432,
 });
-
+app.use(express.static('public'));
 // Endpoint pour récupérer tous les films
 app.get("/movies", async (req, res) => {
   try {
