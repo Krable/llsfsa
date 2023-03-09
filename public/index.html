@@ -1,336 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Mon site</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/general.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/header.css" />
+    <link rel="stylesheet" href="/add.css" />
+    <title>SFSA</title>
   </head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-    }
-    .cards-container {
-      margin: 20px auto 0;
-      max-width: 900px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2%;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      flex: 1 1 23%;
-      margin-top: 2%;
-      overflow: hidden;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-    }
-
-    .card-text {
-      padding: 10px;
-      text-align: center;
-    }
-
-    .card-text h3 {
-      font-size: 1.2rem;
-      margin: 10px;
-    }
-
-    .card-text p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .card-text p.countdown {
-      margin: 10px;
-      font-size: 20px;
-      text-align: center;
-    }
-
-    .form-container {
-      margin: 0 auto;
-      max-width: 900px;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-    }
-
-    .form-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      background-color: #2196f3;
-      color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    .form-toggle:hover {
-      background-color: #0c7cd5;
-    }
-
-    .form-toggle h2 {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .form-toggle .arrow {
-      border: solid #fff;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-      transform: rotate(-45deg);
-    }
-
-    .form-toggle.collapsed .arrow {
-      transform: rotate(135deg);
-    }
-
-    form {
-      display: none;
-    }
-
-    form.active {
-      display: flex;
-    }
-    form {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 20px 0;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    form button[type="submit"] {
-      background-color: #2196f3;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    form button[type="submit"]:hover {
-      background-color: #0c7cd5;
-    }
-
-    @media (max-width: 768px) {
-      .form-container {
-        margin-top: 40px;
-      }
-
-      .cards-container {
-        margin-top: 20px;
-      }
-    }
-  </style>
   <body>
     <header>
-      <!-- Contenu du header -->
+      <div class="flex" id="container_title_site">
+        <h1>Suggestion Film/Série/Animé</h1>
+      </div>
     </header>
 
-    <main>
-      <div class="form-container">
-        <div class="form-header">
-          <h2>Ajouter une nouvelle box</h2>
-          <button class="form-toggle collapsed">
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-
-        <form>
-          <label for="image-url">URL de l'image :</label>
-          <input type="text" id="image-url" name="image-url" required />
-
-          <label for="title">Titre :</label>
-          <input type="text" id="title" name="title" required />
-
-          <label for="description">Description :</label>
-          <textarea
-            id="description"
-            name="description"
-            rows="4"
-            required
-          ></textarea>
-
-          <button type="submit">Créer la box</button>
+    <section id="container_add_suggestion">
+      <div id="box_quit"><button id="btn_quit">X</button></div>
+      <div class="flex" id="box_input_add_suggestion">
+        <form class="flex" action="#">
+          <input id="inpt_title" type="text" placeholder="Titre" />
+          <input id="inpt_date" type="date" placeholder="Titre" />
+          <input id="inpt_time" type="time" placeholder="Titre" />
+          <div class="flex" id="box_plateform_add_suggestion">
+            <p>Disponible:</p>
+            <input id="plateforme_netflix" type="checkbox" />
+            <label for="plateforme_netflix">Netflix</label>
+            <input id="plateforme_apv" type="checkbox" />
+            <label for="plateforme_apv">Amazon Prime Vidéo</label>
+            <input id="plateforme_dowlaod" type="checkbox" />
+            <label for="plateforme_dowlaod">Télécharger</label>
+          </div>
+          <input id="inpt_url_netflix" type="url" placeholder="URL: Netflix" />
+          <input
+            id="inpt_url_apv"
+            type="url"
+            placeholder="URL: Amazon Prime Vidéo"
+          />
+          <input id="inpt_url_critic" type="url" placeholder="URL: Allocine" />
+          <input id="inpt_url_image" type="url" placeholder="URL: Image" />
+          <input id="inpt_submit" type="submit" />
         </form>
       </div>
-      <div class="cards-container">
-        <div class="card">
-          <img src="https://picsum.photos/200/300" alt="Titre de la box" />
-          <div class="card-text">
-            <h3>Titre de la box</h3>
-            <p class="countdown" data-end-date="2023-03-31T23:59:59">
-              JJ:HH:MM
-            </p>
+    </section>
+
+    <section id="container_display">
+      <ul id="ulul" class="flex">
+        <li>
+          <div class="flex" id="box_display_add">
+            <button id="btn_open_add_suggestion">+</button>
           </div>
-        </div>
+        </li>
+        <!-- <li id="container_li_display">
+             <div class="box_display">
+              <div class="image"></div>
+              <div class="flex overlay">
+                  <div class="text title"><p>Downsizing</p></div>
+                  <div class="text date_time"><p>(<span id="spanDate">2017</span>) - <span id="spanTime">2h</span></p></div>
+                  <div class="text plateforme">
+                    <ul class="flex plateformeUl">
+                      <li class="plateformeUlLi"></li>
+                    </ul>
+                  </div>
+                  <div class="text review">
+                    <ul class="flex">
+                      <li class="Allocine"></li>
+                    </ul>
+                  </div>
+              </div>
+          </li> -->
+      </ul>
+    </section>
 
-        <div class="card">
-          <img src="https://picsum.photos/200/300" alt="Titre de la box" />
-          <div class="card-text">
-            <h3>Titre de la box</h3>
-            <p class="countdown" data-end-date="2023-03-31T23:59:59">
-              JJ:HH:MM
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/200/300" alt="Titre de la box" />
-          <div class="card-text">
-            <h3>Titre de la box</h3>
-            <p class="countdown" data-end-date="2023-03-31T23:59:59">
-              JJ:HH:MM
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/200/300" alt="Titre de la box" />
-          <div class="card-text">
-            <h3>Titre de la box</h3>
-            <p class="countdown" data-end-date="2023-03-31T23:59:59">
-              JJ:HH:MM
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/200/300" alt="Titre de la box" />
-          <div class="card-text">
-            <h3>Titre de la box</h3>
-            <p class="countdown" data-end-date="2023-03-31T23:59:59">
-              JJ:HH:MM
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://picsum.photos/200/300" alt="Titre de la box" />
-          <div class="card-text">
-            <h3>Titre de la box</h3>
-            <p class="countdown" data-end-date="2023-03-09T14:16:59">
-              JJ:HH:MM
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <!-- Contenu du footer -->
-    </footer>
-
-    <script>
-      window.addEventListener("load", function () {
-        const formToggle = document.querySelector(".form-toggle");
-        const form = document.querySelector("form");
-
-        formToggle.addEventListener("click", () => {
-          form.classList.toggle("active");
-          formToggle.classList.toggle("collapsed");
-        });
-
-        const countdowns = document.querySelectorAll(".countdown");
-        countdowns.forEach(function (el) {
-          const endDate = new Date(el.getAttribute("data-end-date")).getTime();
-
-          const now = new Date().getTime();
-          const timeRemaining = endDate - now;
-
-          if (timeRemaining > 0) {
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor(
-              (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-            const minutes = Math.floor(
-              (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
-            );
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            // Stockage des informations de temps restant en tant que data dans l'élément HTML
-            el.dataset.days = days;
-            el.dataset.hours = hours;
-            el.dataset.minutes = minutes;
-            el.dataset.seconds = seconds;
-          } else {
-            console.log("timeRemaining");
-            el.dataset.days = 0;
-            el.dataset.hours = 0;
-            el.dataset.minutes = 0;
-            el.dataset.seconds = 1;
-          }
-        });
-
-        function updateCountdown() {
-          // Affichage du temps restant dans l'élément
-          countdowns.forEach((el) => {
-            let seconds = el.dataset.seconds;
-            let minutes = el.dataset.minutes;
-            let hours = el.dataset.hours;
-            let days = el.dataset.days;
-
-            seconds--;
-            if (seconds < 0) {
-              seconds = 59;
-              minutes--;
-              if (minutes < 0) {
-                minutes = 59;
-                hours--;
-                if (hours < 0) {
-                  hours = 23;
-                  days--;
-                }
-              }
-            }
-            el.dataset.seconds = seconds;
-            el.dataset.minutes = minutes;
-            el.dataset.hours = hours;
-            el.dataset.days = days;
-
-            el.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) {
-              clearInterval(countdownInterval);
-              el.innerHTML = "EXPIRED";
-            }
-          });
-        }
-
-        // Mise à jour de l'affichage du compte à rebours toutes les secondes
-        const countdownInterval = setInterval(updateCountdown, 1000);
-      });
-    </script>
+    <script src="/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,169 @@
+#container_display {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+#container_display ul {
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+#container_display ul li {
+  position: relative;
+  margin: 20px;
+}
+
+/* BOX SUGGESTION */
+
+/* CONTAINER DISPLAY ADD */
+
+#box_display_add {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(32, 32, 33);
+}
+
+#box_display_add button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* CONTAINER DISPLAY */
+
+.box_display {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(2, 2, 3);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  background-image: url(/img/Downsizing.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  transition: 1s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  flex-direction: column;
+}
+
+.text {
+  width: auto;
+  height: auto;
+  margin: 4px;
+  color: white;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.box_display:hover .image {
+  opacity: 0.1;
+}
+
+.box_display:hover .text {
+  opacity: 1;
+}
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/* SELECTION */
+
+/* TITLE */
+
+.title {
+  font-size: 30px;
+}
+
+/* TIME & DATE */
+
+.date_time {
+  font-size: 18px;
+  color: rgb(171, 171, 171);
+}
+
+/* PLATEFORME */
+
+.plateforme {
+  width: auto;
+  height: auto;
+}
+
+.plateformeUl {
+  flex-wrap: nowrap;
+}
+
+.plateformeUlLi {
+  width: 60px;
+  height: 80px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.netflix {
+  background-image: url(/img/netflix.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.amazon {
+  background-image: url(/img/amazonPrimeVIdeo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.downlaod {
+  background-image: url(/img/download.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* review */
+
+.review {
+  width: auto;
+  height: auto;
+}
+
+.review ul {
+  flex-wrap: nowrap;
+}
+
+.review ul li {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.Allocine {
+  background-image: url(/img/allocineV2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
