@@ -2,30 +2,54 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px;
 }
 
 .film-item {
-  width: calc(33.33% - 10px);
-  margin-bottom: 20px;
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  padding: 20px;
-  box-sizing: border-box;
+  width: 30%;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .film-item img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
 }
 
 .film-title {
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 1.2rem;
+  margin: 10px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .film-description {
-  margin-top: 5px;
-  font-size: 0.9rem;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.platforms {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.platforms li {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  width: 30%;
+}
+
+.platforms .netflix {
+  background-color: red;
+}
+
+.platforms .amazon {
+  background-color: orange;
+}
+
+.platforms .download {
+  background-color: green;
 }
