@@ -6,10 +6,10 @@ const pg = require("pg");
 
 // Configuration de la base de données
 const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "moviesdb",
-  password: "password",
+  user: "llsfsa_user",
+  host: "dpg-cg4vouceoogtrlv5l9l0-a",
+  database: "llsfsa",
+  password: "dbItIvpt4oSbR8UcD9qppAfTfVX10R27",
   port: 5432,
 });
 app.use(express.static('public'));
