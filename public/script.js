@@ -24,7 +24,7 @@ const title = document.createElement("div");
 title.classList.add("text");
 title.classList.add("title");
 const pTitle = document.createElement("p");
-pTitle.textContent = movie.title;
+pTitle.textContent = movie.name;
 title.appendChild(pTitle);
 
  let d = new Date(movie.release_date)
@@ -58,21 +58,18 @@ ulPlateforme.classList.add("plateformeUl");
     const netflix = document.createElement("li");
     netflix.classList.add("plateformeUlLi");
     netflix.classList.add("netflix");
-    netflix.textContent = "Disponible sur Netflix";
     ulPlateforme.appendChild(netflix);
   }
   if (movie.amazon) {
     const amazon = document.createElement("li");
     amazon.classList.add("plateformeUlLi");
     amazon.classList.add("amazon");
-    amazon.textContent = "Disponible sur Amazon";
     ulPlateforme.appendChild(amazon);
   }
   if (movie.download) {
     const download = document.createElement("li");
     download.classList.add("plateformeUlLi");
     download.classList.add("download");
-    download.textContent = "Disponible en téléchargement";
     ulPlateforme.appendChild(download);
   }
   
