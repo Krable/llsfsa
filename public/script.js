@@ -5,7 +5,7 @@ const moviesUrl = "https://llsfsa.onrender.com/movies";
 function createMoviePoster(movie) {
   // Créer un élément div pour contenir l'affiche de film
   const poster = document.createElement("div");
-  poster.classList.add("movie-poster");
+  poster.classList.add("film-item");
 
   // Ajouter l'image de l'affiche de film
   const image = document.createElement("img");
@@ -16,11 +16,13 @@ function createMoviePoster(movie) {
   // Ajouter le titre du film
   const title = document.createElement("h2");
   title.textContent = movie.title;
+  title.classList.add("film-title");
   poster.appendChild(title);
 
   // Ajouter la date de sortie du film
   const releaseDate = document.createElement("p");
   releaseDate.textContent = `Date de sortie : ${movie.release_date}`;
+  releaseDate.classList.add("film-description");
   poster.appendChild(releaseDate);
 
   // Ajouter la liste des plateformes de distribution
