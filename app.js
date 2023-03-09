@@ -1,91 +1,31 @@
-const express = require('express');
-const mysql = require('mysql');
-
+const express = require("express");
 const app = express();
-app.use(express.json());
+const pg = require("pg");
 
-// Connexion à la base de données MariaDB
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'ma_base_de_donnees'
+// Configuration de la base de données
+const pool = new pg.Pool({
+  user: "postgres",
+  host: "localhost",
+  database: "moviesdb",
+  password: "password",
+  port: 5432,
 });
 
-// Route GET pour récupérer tous les films de la base de données
-app.get('/films', (req, res) => {
-  const query = 'SELECT * FROM films';
-  connection.query(query, (error, results) => {
-    if (error) {
-      res.status(500).send(error);
-    } else {
-      res.send(results);
-    }
-  });
+// Endpoint pour récupérer tous les films
+app.get("/movies", async (req, res) => {
+  try {
+    const client = await pool.connect();
+    const result = await client.query("SELECT * FROM movies");
+    const movies = result.rows;
+    res.json(movies);
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
 });
 
-// Route GET pour récupérer un film en particulier par son ID
-app.get('/films/:id', (req, res) => {
-  const id = req.params.id;
-  const query = 'SELECT * FROM films WHERE id = ?';
-  connection.query(query, [id], (error, results) => {
-    if (error) {
-      res.status(500).send(error);
-    } else if (results.length === 0) {
-      res.status(404).send('Film not found');
-    } else {
-      res.send(results[0]);
-    }
-  });
-});
-
-// Route POST pour ajouter un nouveau film à la base de données
-app.post('/films', (req, res) => {
-  const film = req.body;
-  const query = 'INSERT INTO films (nom, date, image, netflix, amazon) VALUES (?, ?, ?, ?, ?)';
-  connection.query(query, [film.nom, film.date, film.image, film.netflix, film.amazon], (error, result) => {
-    if (error) {
-      res.status(500).send(error);
-    } else {
-      film.id = result.insertId;
-      res.status(201).send(film);
-    }
-  });
-});
-
-// Route PUT pour mettre à jour un film existant dans la base de données
-app.put('/films/:id', (req, res) => {
-  const id = req.params.id;
-  const film = req.body;
-  const query = 'UPDATE films SET nom = ?, date = ?, image = ?, netflix = ?, amazon = ? WHERE id = ?';
-  connection.query(query, [film.nom, film.date, film.image, film.netflix, film.amazon, id], (error, result) => {
-    if (error) {
-      res.status(500).send(error);
-    } else if (result.affectedRows === 0) {
-      res.status(404).send('Film not found');
-    } else {
-      film.id = id;
-      res.send(film);
-    }
-  });
-});
-
-// Route DELETE pour supprimer un film de la base de données
-app.delete('/films/:id', (req, res) => {
-  const id = req.params.id;
-  const query = 'DELETE FROM films WHERE id = ?';
-  connection.query(query, [id], (error, result) => {
-    if (error) {
-      res.status(500).send(error);
-    } else if (result.affectedRows === 0) {
-      res.status(404).send('Film not found');
-    } else {
-      res.status(204).send();
-    }
-  });
-});
-
-// Démarrage du serveur sur le port 3000
+// Démarrage du serveur
 app.listen(3000, () => {
-  console.log('Serveur démarré sur le port 3000');
+  console.log("Server is listening on port 3000");
 });
