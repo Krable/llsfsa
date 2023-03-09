@@ -25,6 +25,9 @@ app.get("/movies", async (req, res) => {
     res.send("Error " + err);
   }
 });
+app.get('/',function(req,res) {
+  res.sendFile('index.html');
+});
 
 // Démarrage du serveur
 app.listen(port, () => {
