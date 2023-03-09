@@ -3,53 +3,108 @@ const moviesUrl = "https://llsfsa.onrender.com/movies";
 
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
-  // Créer un élément div pour contenir l'affiche de film
-  const poster = document.createElement("div");
-  poster.classList.add("film-item");
+  const containerLiDisplay = document.createElement("li");
+containerLiDisplay.setAttribute("id", "container_li_display");
 
-  // Ajouter l'image de l'affiche de film
-  const image = document.createElement("img");
-  image.src = movie.image_url;
-  image.alt = movie.title;
-  poster.appendChild(image);
+const boxDisplay = document.createElement("div");
+boxDisplay.classList.add("box_display");
 
-  // Ajouter le titre du film
-  const title = document.createElement("h2");
-  title.textContent = movie.title;
-  title.classList.add("film-title");
-  poster.appendChild(title);
+const image = document.createElement("div");
+image.classList.add("image");
+const img = document.createElement("img");
+img.src = movie.image_url;
+  img.alt = movie.title;
+image.appendChild(img);
 
-  // Ajouter la date de sortie du film
-  const releaseDate = document.createElement("p");
-  releaseDate.textContent = `Date de sortie : ${movie.release_date}`;
-  releaseDate.classList.add("film-description");
-  poster.appendChild(releaseDate);
+const overlay = document.createElement("div");
+overlay.classList.add("flex");
+overlay.classList.add("overlay");
 
-  // Ajouter la liste des plateformes de distribution
-  const distribution = document.createElement("ul");
-  distribution.classList.add("platforms")
+const title = document.createElement("div");
+title.classList.add("text");
+title.classList.add("title");
+const pTitle = document.createElement("p");
+pTitle.textContent = movie.title;
+title.appendChild(pTitle);
+
+ let d = new Date(movie.release_date)
+ let year = d.getFullYear();
+let hour = d.getHours();
+ 
+const date = document.createElement("div");
+date.classList.add("text");
+date.classList.add("date_time");
+const pDate = document.createElement("p");
+const spanDate = document.createElement("span");
+spanDate.setAttribute("id", "spanDate");
+spanDate.textContent = year;
+const spanTime = document.createElement("span");
+spanTime.setAttribute("id", "spanTime");
+spanTime.textContent = hour;
+pDate.appendChild(document.createTextNode("("));
+pDate.appendChild(spanDate);
+pDate.appendChild(document.createTextNode(") - "));
+pDate.appendChild(spanTime);
+pDate.appendChild(document.createTextNode("min"));
+date.appendChild(pDate);
+
+  const plateforme = document.createElement("div");
+plateforme.classList.add("text");
+  const ulPlateforme = document.createElement("ul");
+ulPlateforme.classList.add("flex");
+ulPlateforme.classList.add("plateformeUl");
+  
   if (movie.netflix) {
     const netflix = document.createElement("li");
-    netflix.textContent = "Disponible sur Netflix";
+    netflix.classList.add("plateformeUlLi");
     netflix.classList.add("netflix");
-    distribution.appendChild(netflix);
+    netflix.textContent = "Disponible sur Netflix";
+    ulPlateforme.appendChild(netflix);
   }
   if (movie.amazon) {
     const amazon = document.createElement("li");
-    amazon.textContent = "Disponible sur Amazon";
+    amazon.classList.add("plateformeUlLi");
     amazon.classList.add("amazon");
-    distribution.appendChild(amazon);
+    amazon.textContent = "Disponible sur Amazon";
+    ulPlateforme.appendChild(amazon);
   }
   if (movie.download) {
     const download = document.createElement("li");
-    download.textContent = "Disponible en téléchargement";
+    download.classList.add("plateformeUlLi");
     download.classList.add("download");
-    distribution.appendChild(download);
+    download.textContent = "Disponible en téléchargement";
+    ulPlateforme.appendChild(download);
   }
-  poster.appendChild(distribution);
+  
+plateforme.appendChild(ulPlateforme);
+  
 
-  // Retourner l'élément div complet
-  return poster;
+const liNetflix = document.createElement("li");
+liNetflix.classList.add("plateformeUlLi");
+liNetflix.classList.add("netflix");
+ulPlateforme.appendChild(liNetflix);
+
+
+const review = document.createElement("div");
+review.classList.add("text");
+const ulReview = document.createElement("ul");
+ulReview.classList.add("flex");
+const liAllocine = document.createElement("li");
+liAllocine.classList.add("Allocine");
+ulReview.appendChild(liAllocine);
+review.appendChild(ulReview);
+
+overlay.appendChild(title);
+overlay.appendChild(date);
+overlay.appendChild(plateforme);
+overlay.appendChild(review);
+
+boxDisplay.appendChild(image);
+boxDisplay.appendChild(overlay);
+
+containerLiDisplay.appendChild(boxDisplay);
+  return containerLiDisplay;
+  
 }
 
 // Fonction pour créer des affiches de film pour chaque film de l'API
