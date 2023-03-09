@@ -25,8 +25,9 @@ app.get("/movies", async (req, res) => {
     res.send("Error " + err);
   }
 });
-app.get('/',function(req,res) {
-  res.sendFile('index.html');
+app.get('/', (req, res) => {
+  const filePath = path.join(__dirname, 'public', 'index.html');
+  res.sendFile(filePath);
 });
 
 // Démarrage du serveur
