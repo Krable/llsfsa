@@ -256,17 +256,17 @@ function createMoviePoster(movie) {
 
   // Ajouter la liste des plateformes de distribution
   const distribution = document.createElement("ul");
-  if (movie.available_on.netflix) {
+  if (movie.netflix) {
     const netflix = document.createElement("li");
     netflix.textContent = "Disponible sur Netflix";
     distribution.appendChild(netflix);
   }
-  if (movie.available_on.amazon) {
+  if (movie.amazon) {
     const amazon = document.createElement("li");
     amazon.textContent = "Disponible sur Amazon";
     distribution.appendChild(amazon);
   }
-  if (movie.available_on.download) {
+  if (movie.download) {
     const download = document.createElement("li");
     download.textContent = "Disponible en téléchargement";
     distribution.appendChild(download);
