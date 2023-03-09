@@ -48,7 +48,7 @@
   width: 100%;
   height: 100%;
   transition: 0.5s ease;
-  background-image: url(/img/Downsizing.jpg);
+  background-image: url(./img/Downsizing.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -123,21 +123,21 @@
 }
 
 .netflix {
-  background-image: url(/img/netflix.png);
+  background-image: url(./img/netflix.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .amazon {
-  background-image: url(/img/amazonPrimeVIdeo.png);
+  background-image: url(./img/amazonPrimeVIdeo.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .downlaod {
-  background-image: url(/img/download.png);
+  background-image: url(./img/download.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -162,7 +162,7 @@
 }
 
 .Allocine {
-  background-image: url(/img/allocineV2.png);
+  background-image: url(./img/allocineV2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
