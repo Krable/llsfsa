@@ -17,7 +17,7 @@ app.use(express.static('public'));
 app.get("/movies", async (req, res) => {
   try {
     const client = await pool.connect();
-    const result = await client.query("SELECT * FROM movies");
+    const result = await client.query("SELECT * FROM films");
     const movies = result.rows;
     res.json(movies);
     client.release();
