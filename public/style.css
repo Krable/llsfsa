@@ -1,3 +1,22 @@
+#container_display {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+#container_display ul {
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+#container_display ul li {
+  position: relative;
+  margin: 20px;
+}
+
 .box_display {
   width: 300px;
   height: 400px;
