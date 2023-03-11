@@ -44,6 +44,8 @@
   transform: translate(-50%, -50%);
   text-align: center;
   flex-direction: column;
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
 .text {
@@ -52,14 +54,11 @@
   margin: 4px;
   color: white;
   font-size: 16px;
-  opacity: 0;
 }
-
 .box_display:hover .image {
   opacity: 0.1;
 }
-
-.box_display:hover .text {
+.box_display:hover .overlay {
   opacity: 1;
 }
 
@@ -104,21 +103,21 @@
 }
 
 .netflix {
-  background-image: url(/img/netflix.png);
+  background-image: url(../img/netflix.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .amazon {
-  background-image: url(/img/amazonPrimeVIdeo.png);
+  background-image: url(../img/amazonPrimeVIdeo.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .download {
-  background-image: url(/img/download.png);
+  background-image: url(../img/download.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -143,7 +142,7 @@
 }
 
 .allocine {
-  background-image: url(/img/allocine.png);
+  background-image: url(../img/allocine.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -164,28 +163,28 @@
 }
 
 .forbiden10 {
-  background-image: url(/img/interdit-10.png);
+  background-image: url(../img/interdit-10.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .forbiden12 {
-  background-image: url(/img/interdit-12.png);
+  background-image: url(../img/interdit-12.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .forbiden16 {
-  background-image: url(/img/interdit-16.png);
+  background-image: url(../img/interdit-16.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .forbiden18 {
-  background-image: url(/img/interdit-18.png);
+  background-image: url(../img/interdit-18.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
