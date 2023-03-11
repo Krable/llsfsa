@@ -84,7 +84,7 @@ function createMoviePoster(movie) {
 
   // ALLOCINE
   const review = document.createElement("div");
-  review.classList.add("text");
+  review.classList.add("review");
   const ulReview = document.createElement("ul");
   ulReview.classList.add("flex");
   if (movie.allocine_url) {

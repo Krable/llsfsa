@@ -36,6 +36,17 @@ h3 {
   cursor: default;
 }
 
-.li{
+.li {
   list-style: none;
 }
+
+/* 
+::selection {
+  color: none;
+  background: none;
+} */
+/* For Mozilla Firefox */
+/* ::-moz-selection {
+  color: none;
+  background: none;
+} */
