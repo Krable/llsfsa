@@ -61,7 +61,7 @@ function createMoviePoster(movie) {
     const amazon = document.createElement("li");
     amazon.classList.add("plateformeUlLi");
     amazon.classList.add("amazon");
-    amazon.addEventListener("click", (movie) => {
+    amazon.addEventListener("click", () => {
       window.open(movie.amazon_url);
     });
     ulPlateforme.appendChild(amazon);
