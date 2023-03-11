@@ -94,6 +94,37 @@ function createMoviePoster(movie) {
     review.appendChild(ulReview);
   }
 
+  // FORBIDEN
+  const forbiden = document.createElement("div");
+  forbiden.classList.add("box_forbidden");
+  if (movie.interdi10) {
+    const imgForbiden = document.createElement("img");
+    imgForbiden.classList.add("forbiden10");
+    forbiden.appendChild(imgForbiden);
+  }
+
+  if (movie.interdi12) {
+    const imgForbiden = document.createElement("img");
+    imgForbiden.classList.add("forbiden12");
+    forbiden.appendChild(imgForbiden);
+  }
+
+  if (movie.interdi16) {
+    const imgForbiden = document.createElement("img");
+    imgForbiden.classList.add("forbiden16");
+    forbiden.appendChild(imgForbiden);
+  }
+
+  if (movie.interdi18) {
+    const imgForbiden = document.createElement("img");
+    imgForbiden.classList.add("forbiden18");
+    forbiden.appendChild(imgForbiden);
+  }
+
+  /////////////////
+  /////////////////
+  /////////////////
+
   overlay.appendChild(title);
   overlay.appendChild(date);
   overlay.appendChild(plateforme);
@@ -101,6 +132,7 @@ function createMoviePoster(movie) {
 
   boxDisplay.appendChild(image);
   boxDisplay.appendChild(overlay);
+  boxDisplay.appendChild(forbiden);
 
   containerLiDisplay.appendChild(boxDisplay);
   return containerLiDisplay;

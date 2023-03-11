@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="general.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/filters.css" />
 
     <title>SFSA</title>
   </head>
@@ -17,10 +18,43 @@
       </div>
     </header>
 
+    <!-- SECTION FILTERS -->
+
+    <!-- <section id="container_filters">
+      <div class="flex" id="box_filters">
+        <p style="color: whitesmoke">Filtres:</p>
+        <input id="inpt_search" type="search" placeholder="Rechercher..." />
+        <div class="custom-select">
+          <select>
+            <option value="title_plateform_option">Select plateform:</option>
+            <option value="netflix">Netflix</option>
+            <option value="apv">Amazon Prime Vidéo</option>
+            <option value="download">Téléchargement</option>
+          </select>
+        </div>
+        <div class="custom-select">
+          <select>
+            <option value="title_date_option">Select date:</option>
+            <option value="1">2011</option>
+            <option value="2">2012</option>
+            <option value="2">2013</option>
+          </select>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- SECTION DISPLAY -->
+
     <section id="container_display">
-      <ul id="ulul"></ul>
+      <ul id="ulul">
+        <div class="box_forbidden">
+          <!-- <img class="box_forbiddenImg" src="" alt=""> -->
+        </div>
+      </ul>
+      
     </section>
 
     <script src="script.js"></script>
+    <script src="/public/filters.js"></script>
   </body>
 </html>

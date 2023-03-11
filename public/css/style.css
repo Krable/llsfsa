@@ -1,0 +1,192 @@
+#container_display {
+  width: 100%;
+  height: 90vh;
+  background-color: rgb(15, 19, 30);
+}
+
+#container_display ul {
+  justify-content: left;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+#container_display ul li {
+  position: relative;
+  margin: 20px;
+}
+
+.box_display {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(2, 2, 3);
+}
+
+.image {
+  width: auto;
+  height: auto;
+  transition: 0.5s ease;
+}
+
+.image img {
+  width: 300px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  transition: 1s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  flex-direction: column;
+}
+
+.text {
+  width: auto;
+  height: auto;
+  margin: 4px;
+  color: white;
+  font-size: 16px;
+  opacity: 0;
+}
+
+.box_display:hover .image {
+  opacity: 0.1;
+}
+
+.box_display:hover .text {
+  opacity: 1;
+}
+
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/**/
+/* SELECTION */
+
+/* TITLE */
+
+.title {
+  font-size: 30px;
+}
+
+/* TIME & DATE */
+
+.date_time {
+  font-size: 18px;
+  color: rgb(171, 171, 171);
+}
+
+/* PLATEFORME */
+
+.plateforme {
+  width: auto;
+  height: auto;
+}
+
+.plateformeUl {
+  flex-wrap: nowrap;
+}
+
+.plateformeUlLi {
+  width: 60px;
+  height: 80px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.netflix {
+  background-image: url(/img/netflix.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.amazon {
+  background-image: url(/img/amazonPrimeVIdeo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.download {
+  background-image: url(/img/download.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* review */
+
+.review {
+  width: auto;
+  height: auto;
+}
+
+.review ul {
+  flex-wrap: nowrap;
+}
+
+.review ul li {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.allocine {
+  background-image: url(/img/allocine.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* BOX FORBIDEN */
+
+.box_forbidden {
+  z-index: 1;
+  position: absolute;
+  top: 130px;
+  left: 30px;
+}
+
+.box_forbiddenImg {
+  width: 40px;
+  height: 40px;
+}
+
+.forbiden10 {
+  background-image: url(/img/interdit-10.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.forbiden12 {
+  background-image: url(/img/interdit-12.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.forbiden16 {
+  background-image: url(/img/interdit-16.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.forbiden18 {
+  background-image: url(/img/interdit-18.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

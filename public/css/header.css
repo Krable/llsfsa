@@ -1,0 +1,18 @@
+header {
+  width: 100%;
+  height: 10vh;
+  background-color: rgba(15, 19, 30, 0.974);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+header h1 {
+  margin-left: 40px;
+  color: whitesmoke;
+}
+
+#second_title {
+  font-size: 24px;
+  color: gray;
+}
