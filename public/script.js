@@ -83,12 +83,11 @@ function createMoviePoster(movie) {
   plateforme.appendChild(ulPlateforme);
 
   // ALLOCINE
-
+  const review = document.createElement("div");
+  review.classList.add("text");
+  const ulReview = document.createElement("ul");
+  ulReview.classList.add("flex");
   if (movie.allocine_url) {
-    const review = document.createElement("div");
-    review.classList.add("text");
-    const ulReview = document.createElement("ul");
-    ulReview.classList.add("flex");
     const allocine = document.createElement("li");
     allocine.classList.add("allocine");
     ulReview.appendChild(allocine);
