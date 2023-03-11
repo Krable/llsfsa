@@ -142,8 +142,8 @@
   cursor: pointer;
 }
 
-.Allocine {
-  background-image: url(/img/allocineV2.png);
+.allocine {
+  background-image: url(/img/allocine.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

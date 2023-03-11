@@ -51,6 +51,8 @@ function createMoviePoster(movie) {
   ulPlateforme.classList.add("flex");
   ulPlateforme.classList.add("plateformeUl");
 
+  let download = true;
+
   if (movie.netflix_url) {
     const netflix = document.createElement("li");
     netflix.classList.add("plateformeUlLi");
@@ -59,6 +61,7 @@ function createMoviePoster(movie) {
       window.open(movie.netflix_url);
     });
     ulPlateforme.appendChild(netflix);
+    download = true;
   }
   if (movie.amazon_url) {
     const amazon = document.createElement("li");
@@ -68,8 +71,9 @@ function createMoviePoster(movie) {
       window.open(movie.amazon_url);
     });
     ulPlateforme.appendChild(amazon);
+    download = true;
   }
-  if (movie.download) {
+  if (download) {
     const download = document.createElement("li");
     download.classList.add("plateformeUlLi");
     download.classList.add("download");
@@ -78,12 +82,19 @@ function createMoviePoster(movie) {
 
   plateforme.appendChild(ulPlateforme);
 
-  const review = document.createElement("div");
-  review.classList.add("text");
-  const ulReview = document.createElement("ul");
-  ulReview.classList.add("flex");
-  const liAllocine = document.createElement("li");
-  liAllocine.classList.add("Allocine");
+  // ALLOCINE
+
+  if (movie.allocine_url) {
+    const review = document.createElement("div");
+    review.classList.add("text");
+    const ulReview = document.createElement("ul");
+    ulReview.classList.add("flex");
+    const allocine = document.createElement("li");
+    allocine.classList.add("plateformeUlLi");
+    allocine.classList.add("download");
+    ulReview.appendChild(download);
+  }
+
   ulReview.appendChild(liAllocine);
   review.appendChild(ulReview);
 
