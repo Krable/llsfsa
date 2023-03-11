@@ -51,7 +51,7 @@ function createMoviePoster(movie) {
   ulPlateforme.classList.add("flex");
   ulPlateforme.classList.add("plateformeUl");
 
-  if (movie.netflix) {
+  if (movie.netflix_url) {
     const netflix = document.createElement("li");
     netflix.classList.add("plateformeUlLi");
     netflix.classList.add("netflix");
@@ -60,7 +60,7 @@ function createMoviePoster(movie) {
     });
     ulPlateforme.appendChild(netflix);
   }
-  if (movie.amazon) {
+  if (movie.amazon_url) {
     const amazon = document.createElement("li");
     amazon.classList.add("plateformeUlLi");
     amazon.classList.add("amazon");
