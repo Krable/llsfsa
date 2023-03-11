@@ -12,7 +12,7 @@ function createMoviePoster(movie) {
   image.classList.add("image");
   const img = document.createElement("img");
   img.src = movie.image_url;
-  img.alt = movie.title;
+  img.alt = movie.name;
   image.appendChild(img);
 
   const overlay = document.createElement("div");
@@ -28,7 +28,6 @@ function createMoviePoster(movie) {
 
   let d = new Date(movie.release_date);
   let year = d.getFullYear();
-  let hour = d.getHours();
 
   const date = document.createElement("div");
   date.classList.add("text");
@@ -39,12 +38,11 @@ function createMoviePoster(movie) {
   spanDate.textContent = year;
   const spanTime = document.createElement("span");
   spanTime.setAttribute("id", "spanTime");
-  spanTime.textContent = hour;
+  spanTime.textContent = movie.duree;
   pDate.appendChild(document.createTextNode("("));
   pDate.appendChild(spanDate);
   pDate.appendChild(document.createTextNode(") - "));
   pDate.appendChild(spanTime);
-  pDate.appendChild(document.createTextNode("min"));
   date.appendChild(pDate);
 
   const plateforme = document.createElement("div");
