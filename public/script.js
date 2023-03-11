@@ -100,11 +100,11 @@ function createMoviePoster(movie) {
   const imgForbiden = document.createElement("img");
   let unAge = movie.age;
 
-  if (unAge > 18) {
+  if (unAge >= 18) {
     imgForbiden.classList.add("forbiden18");
-  } else if (unAge > 16) {
+  } else if (unAge >= 16) {
     imgForbiden.classList.add("forbiden16");
-  } else if (unAge > 12) {
+  } else if (unAge >= 12) {
     imgForbiden.classList.add("forbiden12");
   } else {
     imgForbiden.classList.add("forbiden10");
