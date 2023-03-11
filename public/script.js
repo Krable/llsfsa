@@ -61,7 +61,7 @@ function createMoviePoster(movie) {
       window.open(movie.netflix_url);
     });
     ulPlateforme.appendChild(netflix);
-    download = true;
+    download = false;
   }
   if (movie.amazon_url) {
     const amazon = document.createElement("li");
@@ -71,13 +71,13 @@ function createMoviePoster(movie) {
       window.open(movie.amazon_url);
     });
     ulPlateforme.appendChild(amazon);
-    download = true;
+    download = false;
   }
   if (download) {
-    const download = document.createElement("li");
-    download.classList.add("plateformeUlLi");
-    download.classList.add("download");
-    ulPlateforme.appendChild(download);
+    const downloadLi = document.createElement("li");
+    downloadLi.classList.add("plateformeUlLi");
+    downloadLi.classList.add("download");
+    ulPlateforme.appendChild(downloadLi);
   }
 
   plateforme.appendChild(ulPlateforme);
@@ -90,9 +90,8 @@ function createMoviePoster(movie) {
     const ulReview = document.createElement("ul");
     ulReview.classList.add("flex");
     const allocine = document.createElement("li");
-    allocine.classList.add("plateformeUlLi");
-    allocine.classList.add("download");
-    ulReview.appendChild(download);
+    allocine.classList.add("allocine");
+    ulReview.appendChild(allocine);
   }
 
   ulReview.appendChild(liAllocine);
