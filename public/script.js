@@ -92,10 +92,8 @@ function createMoviePoster(movie) {
     const allocine = document.createElement("li");
     allocine.classList.add("allocine");
     ulReview.appendChild(allocine);
+    review.appendChild(ulReview);
   }
-
-  ulReview.appendChild(liAllocine);
-  review.appendChild(ulReview);
 
   overlay.appendChild(title);
   overlay.appendChild(date);
