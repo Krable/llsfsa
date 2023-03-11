@@ -55,6 +55,9 @@ function createMoviePoster(movie) {
     const netflix = document.createElement("li");
     netflix.classList.add("plateformeUlLi");
     netflix.classList.add("netflix");
+    netflix.addEventListener("click", () => {
+      window.open(movie.netflix_url);
+    });
     ulPlateforme.appendChild(netflix);
   }
   if (movie.amazon) {
