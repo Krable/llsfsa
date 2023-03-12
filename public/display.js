@@ -1,8 +1,5 @@
 const moviesUrl = "https://llsfsa.onrender.com/movies";
 
-const containerDipslay = document.querySelector(".container_display");
-containerDipslay.classList.add("container_display");
-
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
   //
@@ -139,8 +136,6 @@ function createMoviePoster(movie) {
   text.appendChild(dateTime);
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
-
-  return containerDipslay;
 }
 
 // Fonction pour créer des affiches de film pour chaque film de l'API
