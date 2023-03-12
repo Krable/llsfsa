@@ -110,6 +110,7 @@ function createMoviePoster(movie) {
     imgForbiden.classList.add("forbiden10");
   }
 
+  imgForbiden.classList.add("box_forbiddenImg");
   forbiden.appendChild(imgForbiden);
 
   /////////////////
