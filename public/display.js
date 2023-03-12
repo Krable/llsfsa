@@ -123,7 +123,6 @@ function createMoviePoster(movie) {
 
   // V
 
-  containerDipslay.appendChild(boxDisplay);
 
   boxDisplay.appendChild(imagePoster);
   boxDisplay.appendChild(overlay);
