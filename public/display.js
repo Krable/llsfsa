@@ -2,7 +2,8 @@ const moviesUrl = "https://llsfsa.onrender.com/movies";
 
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
-  //
+  const containerDisplay = document.getElementById("container_display");
+
   // BOX DISPLAY
 
   const boxDisplay = document.createElement("div");
@@ -123,6 +124,7 @@ function createMoviePoster(movie) {
 
   // V
 
+  containerDisplay.appendChild(boxDisplay);
 
   boxDisplay.appendChild(imagePoster);
   boxDisplay.appendChild(overlay);
