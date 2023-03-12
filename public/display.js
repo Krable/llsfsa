@@ -1,9 +1,8 @@
 const moviesUrl = "https://llsfsa.onrender.com/movies";
+const containerDisplay = document.getElementById("container_display");
 
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
-  const containerDisplay = document.getElementById("container_display");
-
   // BOX DISPLAY
 
   const boxDisplay = document.createElement("div");
@@ -118,11 +117,7 @@ function createMoviePoster(movie) {
 
   boxForbiden.appendChild(boxForbidenImage);
 
-  /////////////////
-  /////////////////
-  /////////////////
-
-  // V
+  // APPEND-CHILD
 
   containerDisplay.appendChild(boxDisplay);
 
@@ -137,6 +132,8 @@ function createMoviePoster(movie) {
   text.appendChild(dateTime);
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
+
+  return containerDisplay;
 }
 
 // Fonction pour créer des affiches de film pour chaque film de l'API
