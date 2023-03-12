@@ -158,5 +158,3 @@ fetch(moviesUrl)
   .then((response) => response.json())
   .then((movies) => createMoviePosters(movies))
   .catch((error) => console.error(error));
-
-// title.className = "text title";
