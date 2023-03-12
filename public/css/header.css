@@ -7,8 +7,13 @@ header {
   align-items: center;
 }
 
-#first_title {
+#container_title {
+  width: auto;
+  height: auto;
   margin-left: 40px;
+}
+
+#first_title {
   font-size: 30px;
   color: whitesmoke;
 }
@@ -25,5 +30,31 @@ header {
   }
   #second_title {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  header {
+    justify-content: center;
+  }
+
+  #container_title {
+    margin-left: 0px;
+  }
+
+  #first_title {
+    font-size: 22px;
+  }
+  #second_title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #first_title {
+    font-size: 20px;
+  }
+  #second_title {
+    font-size: 14px;
   }
 }
