@@ -144,7 +144,7 @@ function createMoviePoster(movie) {
 // Fonction pour créer des affiches de film pour chaque film de l'API
 function createMoviePosters(movies) {
   // Sélectionner l'élément HTML où les affiches seront affichées
-  containerDipslay;
+  const posterContainer = containerDipslay;
 
   // Créer une affiche de film pour chaque film de l'API et l'ajouter au conteneur
   movies.forEach((movie) => {
