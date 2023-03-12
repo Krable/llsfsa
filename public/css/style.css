@@ -1,4 +1,4 @@
-#container_display {
+/* #container_display {
   width: 100%;
   height: 90vh;
   background-color: rgb(15, 19, 30);
@@ -62,29 +62,17 @@
   opacity: 1;
 }
 
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/* SELECTION */
-
-/* TITLE */
 
 .title {
   font-size: 30px;
 }
 
-/* TIME & DATE */
 
 .date_time {
   font-size: 18px;
   color: rgb(171, 171, 171);
 }
 
-/* PLATEFORME */
 
 .plateforme {
   width: auto;
@@ -123,7 +111,6 @@
   background-size: contain;
 }
 
-/* review */
 
 .review {
   width: auto;
@@ -148,7 +135,6 @@
   background-size: contain;
 }
 
-/* BOX FORBIDEN */
 
 .box_forbidden {
   z-index: 1;

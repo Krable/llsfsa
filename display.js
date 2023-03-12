@@ -1,5 +1,5 @@
 const moviesUrl = "https://llsfsa.onrender.com/movies";
-// const containerDipslay = document.getElementById("container_dipslay");
+const containerDipslay = document.getElementById("container_dipslay");
 
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
