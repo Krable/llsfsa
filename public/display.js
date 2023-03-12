@@ -95,6 +95,7 @@ function createMoviePoster(movie) {
   if (movie.allocine_url) {
     const ulLiReview = document.createElement("li");
     ulLiReview.classList.add("flex");
+    ulLiReview.classList.add("allocine");
     ulReview.appendChild(ulLiReview);
   }
 
@@ -134,7 +135,6 @@ function createMoviePoster(movie) {
   text.appendChild(dateTime);
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
-
 
   containerDipslay.appendChild(boxDisplay);
   return containerDipslay;
