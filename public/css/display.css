@@ -1,0 +1,166 @@
+#container_dipslay {
+  max-width: 100%;
+  width: 98%;
+  height: auto;
+  margin: 30px auto;
+  /* border: 1px solid #333; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  grid-gap: 20px;
+  background-color: rgb(219, 232, 244);
+}
+
+.box_display {
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  transition: 1s ease-in-out;
+}
+
+.box_display img {
+  width: 100%;
+  height: 100%;
+}
+
+/* OVERLAY */
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: rgba(9, 11, 18, 0.87);
+}
+
+.text {
+  color: white;
+  cursor: default;
+}
+
+.box_display:hover .box_display img {
+  opacity: 0.1;
+}
+
+.box_display:hover .overlay {
+  opacity: 1;
+}
+
+/* VALUE TEXT */
+
+.first_title {
+  font-size: 28px;
+}
+
+.second_title {
+  font-size: 18px;
+  color: rgb(187, 187, 187);
+}
+
+/* DATE TIME */
+
+.date_time {
+  margin: 20px;
+  font-size: 20px;
+}
+
+/* PLATEFORMS */
+
+.ul_plateforms {
+  width: auto;
+  height: 100px;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.ulLi_plateforms {
+  max-width: 60px;
+  height: auto;
+}
+
+.netflix {
+  background-image: url(../img/netflix.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.amazon {
+  background-image: url(../img/amazonPrimeVIdeo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.download {
+  background-image: url(../img/download.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* REVIEW */
+
+.ul_review {
+  width: auto;
+  height: 80px;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.ul_review li {
+  max-width: 40px;
+  height: auto;
+}
+
+.allocine {
+  background-image: url(../img/allocine.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* FORBIDEN */
+
+.box_forbiden {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  max-width: 20px;
+  height: auto;
+}
+
+.forbiden10 {
+  background-image: url(../img/interdit-10.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.forbiden12 {
+  background-image: url(../img/interdit-12.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.forbiden16 {
+  background-image: url(../img/interdit-16.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.forbiden18 {
+  background-image: url(../img/interdit-18.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

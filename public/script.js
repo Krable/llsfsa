@@ -1,139 +1,150 @@
 const moviesUrl = "https://llsfsa.onrender.com/movies";
+// const containerDipslay = document.getElementById("container_dipslay");
 
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
-  const containerLiDisplay = document.createElement("li");
-  containerLiDisplay.setAttribute("id", "container_li_display");
+  //
+  // BOX DISPLAY V
 
   const boxDisplay = document.createElement("div");
   boxDisplay.classList.add("box_display");
 
-  const image = document.createElement("div");
-  image.classList.add("image");
-  const img = document.createElement("img");
-  img.src = movie.image_url;
-  img.alt = movie.name;
-  image.appendChild(img);
+  // IMAGE POSTER V
+
+  const imagePoster = document.createElement("img");
+  imagePoster.classList.add("image");
+  imagePoster.src = movie.image_url;
+  imagePoster.alt = movie.name;
+
+  // OVERLAY V
 
   const overlay = document.createElement("div");
   overlay.classList.add("flex");
   overlay.classList.add("overlay");
 
-  const title = document.createElement("div");
-  title.classList.add("text");
-  title.classList.add("title");
-  const pTitle = document.createElement("p");
-  pTitle.textContent = movie.name;
-  title.appendChild(pTitle);
+  // TEXT V
+
+  const text = document.createElement("div");
+  text.classList.add("text");
+
+  const firstTitle = document.createElement("p");
+  firstTitle.classList.add("first_title");
+  firstTitle.textContent = movie.name;
+
+  const secondTitle = document.createElement("p");
+  secondTitle.classList.add("second_title");
+  secondTitle.textContent = movie.second_title;
 
   let d = new Date(movie.release_date);
   let year = d.getFullYear();
 
-  const date = document.createElement("div");
-  date.classList.add("text");
-  date.classList.add("date_time");
-  const pDate = document.createElement("p");
+  const dateTime = document.createElement("p");
+  dateTime.classList.add("date_time");
+  const pDateTime = document.createElement("p");
   const spanDate = document.createElement("span");
   spanDate.setAttribute("id", "spanDate");
   spanDate.textContent = year;
   const spanTime = document.createElement("span");
   spanTime.setAttribute("id", "spanTime");
   spanTime.textContent = movie.duree;
-  pDate.appendChild(document.createTextNode("("));
-  pDate.appendChild(spanDate);
-  pDate.appendChild(document.createTextNode(") - "));
-  pDate.appendChild(spanTime);
-  date.appendChild(pDate);
+  pDateTime.appendChild(spanDate);
+  pDateTime.appendChild(document.createTextNode(" - "));
+  pDateTime.appendChild(spanTime);
+  dateTime.appendChild(pDateTime);
 
-  const plateforme = document.createElement("div");
-  plateforme.classList.add("text");
-  const ulPlateforme = document.createElement("ul");
-  ulPlateforme.classList.add("flex");
-  ulPlateforme.classList.add("plateformeUl");
+  // PLATEFORMS V
+
+  const ulPlateforms = document.createElement("ul");
+  ulPlateforms.classList.add("flex");
+  ulPlateforms.classList.add("ul_plateforms");
 
   let download = true;
 
   if (movie.netflix_url) {
     const netflix = document.createElement("li");
-    netflix.classList.add("plateformeUlLi");
+    netflix.classList.add("ulLi_plateforms");
     netflix.classList.add("netflix");
     netflix.addEventListener("click", () => {
       window.open(movie.netflix_url);
     });
-    ulPlateforme.appendChild(netflix);
+    ulPlateforms.appendChild(netflix);
     download = false;
   }
   if (movie.amazon_url) {
     const amazon = document.createElement("li");
-    amazon.classList.add("plateformeUlLi");
+    amazon.classList.add("ulLi_plateforms");
     amazon.classList.add("amazon");
     amazon.addEventListener("click", () => {
       window.open(movie.amazon_url);
     });
-    ulPlateforme.appendChild(amazon);
+    ulPlateforms.appendChild(amazon);
     download = false;
   }
   if (download) {
     const downloadLi = document.createElement("li");
-    downloadLi.classList.add("plateformeUlLi");
+    downloadLi.classList.add("ulLi_plateforms");
     downloadLi.classList.add("download");
-    ulPlateforme.appendChild(downloadLi);
+    ulPlateforms.appendChild(downloadLi);
   }
 
-  plateforme.appendChild(ulPlateforme);
+  // REVIEW V
 
-  // ALLOCINE
-  const review = document.createElement("div");
-  review.classList.add("review");
   const ulReview = document.createElement("ul");
   ulReview.classList.add("flex");
+  ulReview.classList.add("ul_review");
   if (movie.allocine_url) {
-    const allocine = document.createElement("li");
-    allocine.classList.add("allocine");
-    ulReview.appendChild(allocine);
-    review.appendChild(ulReview);
+    const ulLiReview = document.createElement("li");
+    ulLiReview.classList.add("flex");
+    ulReview.appendChild(ulLiReview);
   }
 
-  // FORBIDEN
-  const forbiden = document.createElement("div");
-  forbiden.classList.add("box_forbidden");
-  const imgForbiden = document.createElement("img");
+  // FORBIDEN V
+
+  const boxForbiden = document.createElement("div");
+  boxForbiden.classList.add("box_forbiden");
+  const boxForbidenImage = document.createElement("img");
   let unAge = movie.age;
 
   if (unAge >= 18) {
-    imgForbiden.classList.add("forbiden18");
+    boxForbidenImage.classList.add("forbiden18");
   } else if (unAge >= 16) {
-    imgForbiden.classList.add("forbiden16");
+    boxForbidenImage.classList.add("forbiden16");
   } else if (unAge >= 12) {
-    imgForbiden.classList.add("forbiden12");
+    boxForbidenImage.classList.add("forbiden12");
   } else {
-    imgForbiden.classList.add("forbiden10");
+    boxForbidenImage.classList.add("forbiden10");
   }
 
-  imgForbiden.classList.add("box_forbiddenImg");
-  forbiden.appendChild(imgForbiden);
+  boxForbiden.appendChild(boxForbidenImage);
 
   /////////////////
   /////////////////
   /////////////////
 
-  overlay.appendChild(title);
-  overlay.appendChild(date);
-  overlay.appendChild(plateforme);
-  overlay.appendChild(review);
+  // V
 
-  boxDisplay.appendChild(image);
+  boxDisplay.appendChild(imagePoster);
   boxDisplay.appendChild(overlay);
-  boxDisplay.appendChild(forbiden);
 
-  containerLiDisplay.appendChild(boxDisplay);
-  return containerLiDisplay;
+  overlay.appendChild(text);
+  overlay.appendChild(boxForbiden);
+
+  text.appendChild(firstTitle);
+  text.appendChild(secondTitle);
+  text.appendChild(dateTime);
+  text.appendChild(ulPlateforms);
+  text.appendChild(ulReview);
+
+  boxForbiden.appendChild(boxForbidenImage);
+
+  // containerDipslay.appendChild(boxDisplay);
+  // return containerDipslay;
 }
 
 // Fonction pour créer des affiches de film pour chaque film de l'API
 function createMoviePosters(movies) {
   // Sélectionner l'élément HTML où les affiches seront affichées
-  const posterContainer = document.getElementById("ulul");
+  const posterContainer = document.getElementById("container_dipslay");
 
   // Créer une affiche de film pour chaque film de l'API et l'ajouter au conteneur
   movies.forEach((movie) => {
