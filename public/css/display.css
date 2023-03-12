@@ -89,21 +89,21 @@
   background-image: url(../img/netflix.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .amazon {
   background-image: url(../img/amazonPrimeVIdeo.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .download {
   background-image: url(../img/download.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 /* REVIEW */

@@ -135,7 +135,6 @@ function createMoviePoster(movie) {
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
 
-  boxForbiden.appendChild(boxForbidenImage);
 
   containerDipslay.appendChild(boxDisplay);
   return containerDipslay;
