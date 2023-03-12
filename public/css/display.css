@@ -1,4 +1,4 @@
-#container_dipslay {
+#container_dipslay_main {
   max-width: 100%;
   width: 98%;
   height: auto;
@@ -9,6 +9,11 @@
   justify-content: center;
   grid-gap: 20px;
   background-color: rgb(219, 232, 244);
+}
+
+#container_display {
+  width: auto;
+  height: auto;
 }
 
 .box_display {
