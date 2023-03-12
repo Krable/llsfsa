@@ -11,9 +11,10 @@
   background-color: rgb(219, 232, 244);
 }
 
-#container_display {
-  width: auto;
-  height: auto;
+.container_display {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
 }
 
 .box_display {

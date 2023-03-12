@@ -1,9 +1,10 @@
 const moviesUrl = "https://llsfsa.onrender.com/movies";
 
+const containerDipslay = document.querySelector(".container_display");
+containerDipslay.classList.add("container_display");
+
 // Fonction pour créer une affiche de film
 function createMoviePoster(movie) {
-  const containerDipslay = document.getElementById("container_display");
-  containerDipslay.classList.add("container_display");
   //
   // BOX DISPLAY
 
@@ -125,6 +126,8 @@ function createMoviePoster(movie) {
 
   // V
 
+  containerDipslay.appendChild(boxDisplay);
+
   boxDisplay.appendChild(imagePoster);
   boxDisplay.appendChild(overlay);
 
@@ -137,7 +140,6 @@ function createMoviePoster(movie) {
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
 
-  containerDipslay.appendChild(boxDisplay);
   return containerDipslay;
 }
 
