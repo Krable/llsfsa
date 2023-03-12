@@ -143,6 +143,8 @@
 }
 
 .forbiden10 {
+  width: 40px;
+  height: 40px;
   background-image: url(../img/interdit-10.png);
   background-position: center;
   background-repeat: no-repeat;
