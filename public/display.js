@@ -133,6 +133,7 @@ function createMoviePoster(movie) {
 
   containerDisplay.appendChild(boxDisplay);
 
+  return containerDisplay;
 }
 
 // Fonction pour créer des affiches de film pour chaque film de l'API
