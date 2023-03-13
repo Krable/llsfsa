@@ -141,11 +141,12 @@
   right: 10px;
   max-width: 20px;
   height: auto;
+  border: none;
 }
 
 .forbiden {
-  width: 20px;
-  height: 20px;
+  max-width: 20px;
+  height: auto;
 }
 
 .forbiden10 {
