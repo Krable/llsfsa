@@ -40,6 +40,10 @@ h3 {
   list-style: none;
 }
 
+img {
+  border-style: none;
+}
+
 /* 
 ::selection {
   color: none;
