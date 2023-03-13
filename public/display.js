@@ -115,8 +115,6 @@ function createMoviePoster(movie) {
     boxForbidenImage.classList.add("forbiden10");
   }
 
-  boxForbiden.appendChild(boxForbidenImage);
-
   // APPEND-CHILD
 
   boxDisplay.appendChild(imagePoster);
@@ -131,6 +129,8 @@ function createMoviePoster(movie) {
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
 
+  boxForbiden.appendChild(boxForbidenImage);
+
   containerDisplay.appendChild(boxDisplay);
 
   // return containerDisplay;
@@ -144,7 +144,7 @@ function createMoviePosters(movies) {
   // Créer une affiche de film pour chaque film de l'API et l'ajouter au conteneur
   movies.forEach((movie) => {
     const poster = createMoviePoster(movie);
-    posterContainer.appendChild(poster);
+    poster.appendChild(posterContainer);
   });
 }
 
