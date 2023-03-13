@@ -141,10 +141,10 @@ function createMoviePosters(movies) {
   // Sélectionner l'élément HTML où les affiches seront affichées
   const posterContainer = document.getElementById("container_dipslay_main");
 
-  // Créer une affiche de film pour chaque film de l'API et l'ajouter au conteneur
+  // Créer une affiche de film pour chaque film de l'API et l'ajoute au conteneur
   movies.forEach((movie) => {
     const poster = createMoviePoster(movie);
-    poster.appendChild(posterContainer);
+    posterContainer.appendChild(poster);
   });
 }
 
