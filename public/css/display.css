@@ -12,14 +12,14 @@
 }
 
 #container_display {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   background-color: aqua;
 }
 
 .box_display {
   position: relative;
-  max-width: 300px;
+  max-width: 30px;
   height: auto;
   transition: 1s ease-in-out;
 }
