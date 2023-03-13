@@ -11,11 +11,11 @@
   background-color: rgb(219, 232, 244);
 }
 
-#container_display {
+/* #container_display {
   width: auto;
   height: auto;
   background-color: aqua;
-}
+} */
 
 .box_display {
   position: relative;
