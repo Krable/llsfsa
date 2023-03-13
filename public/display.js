@@ -105,6 +105,7 @@ function createMoviePoster(movie) {
   const forbiden = document.createElement("div");
   forbiden.classList.add("forbiden");
   const boxForbidenImage = document.createElement("img");
+  boxForbidenImage.classList.add("paddingHidden");
   let unAge = movie.age;
 
   if (unAge >= 18) {

@@ -149,6 +149,10 @@
   height: 20px;
 }
 
+.paddingHidden {
+  padding: 10px;
+}
+
 .forbiden10 {
   background-image: url(../img/interdit-10.png);
   background-position: center;
