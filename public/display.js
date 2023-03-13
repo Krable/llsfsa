@@ -104,17 +104,17 @@ function createMoviePoster(movie) {
   boxForbiden.classList.add("box_forbiden");
   const forbiden = document.createElement("div");
   forbiden.classList.add("forbiden");
-  const boxForbidenImage = document.createElement("img");
+  // const boxForbidenImage = document.createElement("img");
   let unAge = movie.age;
 
   if (unAge >= 18) {
-    boxForbidenImage.classList.add("forbiden18");
+    forbiden.classList.add("forbiden18");
   } else if (unAge >= 16) {
-    boxForbidenImage.classList.add("forbiden16");
+    forbiden.classList.add("forbiden16");
   } else if (unAge >= 12) {
-    boxForbidenImage.classList.add("forbiden12");
+    forbiden.classList.add("forbiden12");
   } else {
-    boxForbidenImage.classList.add("forbiden10");
+    forbiden.classList.add("forbiden10");
   }
 
   // APPEND-CHILD
@@ -132,7 +132,7 @@ function createMoviePoster(movie) {
   text.appendChild(ulReview);
 
   boxForbiden.appendChild(forbiden);
-  forbiden.appendChild(boxForbidenImage);
+  // forbiden.appendChild(boxForbidenImage);
 
   containerDisplay.appendChild(boxDisplay);
 
