@@ -119,8 +119,6 @@ function createMoviePoster(movie) {
 
   // APPEND-CHILD
 
-  containerDisplay.appendChild(boxDisplay);
-
   boxDisplay.appendChild(imagePoster);
   boxDisplay.appendChild(overlay);
 
@@ -133,7 +131,9 @@ function createMoviePoster(movie) {
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
 
-  return containerDisplay;
+  containerDisplay.appendChild(boxDisplay);
+
+  // return containerDisplay;
 }
 
 // Fonction pour créer des affiches de film pour chaque film de l'API
