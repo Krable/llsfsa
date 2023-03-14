@@ -158,7 +158,7 @@ function createMoviePosters(movies) {
 
   inptSearch.addEventListener("keyup", (e) => {
     let recupValue = e.target.value.toLowerCase();
-
+    const platformSelected = document.querySelector(".same-as-selected");
     allBoxDisplay.forEach((uneBox) => {
       const firstTitle = uneBox
         .querySelector(".first_title")
@@ -167,6 +167,36 @@ function createMoviePosters(movies) {
         uneBox.classList.add("hiddenBoxDisplay");
       } else {
         uneBox.classList.remove("hiddenBoxDisplay");
+      }
+    });
+    platformSelected.click();
+  });
+
+  // FILTERS PLATEFORMS
+
+  const selectPlateforms = document.getElementById("select_plateforms");
+
+  const allOption = selectPlateforms.querySelectorAll("option");
+
+  allOption.forEach((uneOption) => {
+    uneOption.addEventListener("click", (e) => {
+      const valueOption = e.target.value;
+      allBoxSearch = document.querySelectorAll(
+        ".box_display:not(.hiddenBoxDisplay)"
+      );
+      if (valueOption === "all") {
+        allBoxSearch.forEach((uneBox) => {
+          uneBox.classList.remove("hiddenBoxDisplay");
+        });
+      } else {
+        allBoxSearch.forEach((uneBox) => {
+          const getPlateform = uneBox.querySelector(valueOption);
+          if (getPlateform === null) {
+            uneBox.classList.add("hiddenBoxDisplay");
+          } else {
+            uneBox.classList.remove("hiddenBoxDisplay");
+          }
+        });
       }
     });
   });
@@ -212,6 +242,7 @@ for (i = 0; i < l; i++) {
       create a new DIV that will act as an option item: */
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
+    c.dataset.platform = selElmnt.options[j].value;
     c.addEventListener("click", function (e) {
       /* When an item is clicked, update the original select box,
           and the selected item: */
@@ -232,7 +263,33 @@ for (i = 0; i < l; i++) {
           break;
         }
       }
+      //fermer la div
       h.click();
+    });
+    c.addEventListener("click", (e) => {
+      const valueOption = e.target.dataset.platform;
+      const inptSearch = document.getElementById("inpt_search");
+
+      const event = new KeyboardEvent("keyup", { key: "Enter" });
+      inptSearch.dispatchEvent(event);
+
+      allBoxSearch = document.querySelectorAll(
+        ".box_display:not(.hiddenBoxDisplay)"
+      );
+      if (valueOption === "all") {
+        allBoxSearch.forEach((uneBox) => {
+          uneBox.classList.remove("hiddenBoxDisplay");
+        });
+      } else {
+        allBoxSearch.forEach((uneBox) => {
+          const getPlateform = uneBox.querySelector(valueOption);
+          if (getPlateform === null) {
+            uneBox.classList.add("hiddenBoxDisplay");
+          } else {
+            uneBox.classList.remove("hiddenBoxDisplay");
+          }
+        });
+      }
     });
     b.appendChild(c);
   }

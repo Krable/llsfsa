@@ -28,11 +28,12 @@
         <p style="color: whitesmoke">Filtres:</p>
         <input id="inpt_search" type="search" placeholder="Rechercher..." />
         <div class="custom-select">
-          <select>
-            <option value="title_plateform_option">Select plateform:</option>
-            <option value="netflix">Netflix</option>
-            <option value="apv">Amazon Prime Vidéo</option>
-            <option value="download">Téléchargement</option>
+          <select id="select_plateforms">
+            <option value="">Select plateform:</option>
+            <option value="all" selected>Tous</option>
+            <option value=".netflix">Netflix</option>
+            <option value=".amazon">Amazon Prime Vidéo</option>
+            <option value=".download">Téléchargement</option>
           </select>
         </div>
         <div class="custom-select">
