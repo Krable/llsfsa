@@ -102,8 +102,6 @@ function createMoviePoster(movie) {
 
   const boxForbiden = document.createElement("div");
   boxForbiden.classList.add("box_forbiden");
-  const forbiden = document.createElement("div");
-  forbiden.classList.add("forbiden");
   const boxForbidenImage = document.createElement("img");
   boxForbidenImage.classList.add("paddingHidden");
   let unAge = movie.age;
@@ -132,8 +130,7 @@ function createMoviePoster(movie) {
   text.appendChild(ulPlateforms);
   text.appendChild(ulReview);
 
-  boxForbiden.appendChild(forbiden);
-  forbiden.appendChild(boxForbidenImage);
+  boxForbiden.appendChild(boxForbidenImage);
 
   containerDisplay.appendChild(boxDisplay);
 
