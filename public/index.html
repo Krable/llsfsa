@@ -26,25 +26,21 @@
     <section id="container_filters">
       <div class="flex" id="box_filters">
         <p style="color: whitesmoke">Filtres:</p>
-        <input id="inpt_search" type="search" placeholder="Rechercher..." />
-        <div class="custom-select">
-          <select id="select_plateforms">
-            <option value="">Select plateform:</option>
-            <option value="all" selected>Tous</option>
-            <option value=".netflix">Netflix</option>
-            <option value=".amazon">Amazon Prime Vidéo</option>
-            <option value=".download">Téléchargement</option>
-          </select>
-        </div>
-        <div class="custom-select">
-          <select>
-            <option value="title_date_option">Select date:</option>
-            <option value="1">2011</option>
-            <option value="2">2012</option>
-            <option value="2">2013</option>
-          </select>
-        </div>
-      </div>
+        <ul class="flex">
+          <li><input class="cssSearchFilters" id="inpt_search" type="search" placeholder="Rechercher..." /></li>
+          <li><select class="cssPlateformDateFilters" name="plateforms" id="plateforms_filters">
+            <option value="">Tous</option>
+            <option value="">Netflix</option>
+            <option value="">Amazon prime Video</option>
+            <option value="">Télécharger</option>
+          </select></li>
+          <li><select class="cssPlateformDateFilters" name="date" id="date_filters">
+            <option value="">Tous</option>
+          </select></li>
+          
+        </ul>
+        
+        
     </section>
 
     <!-- SECTION DISPLAY -->
