@@ -95,10 +95,13 @@ function createMoviePoster(movie) {
     const ulLiReview = document.createElement("li");
     ulLiReview.classList.add("flex");
     ulLiReview.classList.add("allocine");
+    ulLiReview.addEventListener("click", () => {
+      window.open(movie.allocine_url);
+    });
     ulReview.appendChild(ulLiReview);
   }
 
-  // FORBIDEN V
+  // FORBIDEN
 
   const boxForbiden = document.createElement("div");
   boxForbiden.classList.add("box_forbiden");
