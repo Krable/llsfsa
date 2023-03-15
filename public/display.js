@@ -176,12 +176,12 @@ function createMoviePosters(movies) {
 
   const selectPlateforms = document.getElementById("select_plateforms");
 
-  const allOption = selectPlateforms.querySelectorAll("option");
+  const allOptionPlateforms = selectPlateforms.querySelectorAll("option");
 
-  allOption.forEach((uneOption) => {
-    uneOption.addEventListener("click", (e) => {
+  allOptionPlateforms.forEach((uneOptionPlateform) => {
+    uneOptionPlateform.addEventListener("click", (e) => {
       const valueOption = e.target.value;
-      allBoxSearch = document.querySelectorAll(
+      const allBoxSearch = document.querySelectorAll(
         ".box_display:not(.hiddenBoxDisplay)"
       );
       if (valueOption === "all") {
@@ -200,6 +200,23 @@ function createMoviePosters(movies) {
       }
     });
   });
+
+  // FILTERS DATE
+
+  // const selectDates = document.getElementById("select_dates");
+
+  // const allOptionDates = selectDates.createElement("option");
+
+  // if (movie.release_date) {
+  //   const createDate = document.createElement("option");
+  //   createDate.classList.add("select-items");
+  // }
+
+  // allOptionDates.forEach((uneOptionDate) => {
+  //   uneOptionDate.addEventListener("click", (e) => {
+  //     const valueOptionDate = e.target.value;
+  //   });
+  // });
 }
 
 // Appeler l'API pour récupérer la liste des films et créer des affiches pour chaque film
