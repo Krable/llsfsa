@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title></title>
+  </head>
+  <body>
+    <div id="container_login_main">
+      <div id="box_login">
+        <div class="flex" id="title_login">
+          <p>Login</p>
+        </div>
+        <div class="flex" id="box_profil">
+          <div id="box_image_profil"></div>
+        </div>
+        <form class="flex" id="form_login" action="" autocomplete="off">
+          <ul class="flex">
+            <li>
+              <input id="inpt_id" type="text" placeholder="Identifiant" />
+            </li>
+            <li>
+              <input
+                id="inpt_password"
+                type="text"
+                placeholder="Mot de passe"
+              />
+            </li>
+            <li>
+              automatique :<input id="automatic_connection" type="checkbox" />
+            </li>
+          </ul>
+        </form>
+        <div class="flex" id="message_error"></div>
+        <!-- <div id="automatic_connection"></div> -->
+        <div class="flex" id="submit_login">
+          <input id="inpt_submit" type="submit" />
+        </div>
+      </div>
+    </div>
+    <script src="./login.js"></script>
+  </body>
+</html>

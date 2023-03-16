@@ -3,7 +3,7 @@ header {
   height: 10vh;
   background-color: rgb(42, 42, 42);
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 
